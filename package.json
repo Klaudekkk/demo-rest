@@ -1,0 +1,24 @@
+{
+  "name": "demo-app-simple-rest-api",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:Lervana/demo-app-simple-rest-api.git",
+  "author": "Katarzyna Dadek <k.dadek@lervana.dev>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development NODE_OPTIONS=--experimental-vm-modules nodemon src/index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.6.0",
+    "express": "^4.17.2",
+    "express-rate-limit": "^6.1.0",
+    "helmet": "^5.0.1",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "uuid": "^8.3.2"
+  }
+}
