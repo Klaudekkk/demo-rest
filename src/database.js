@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 
 class Database {
   data = [];
+  menu = [];
 
   constructor() {
     this.data.push({
@@ -10,7 +11,14 @@ class Database {
       createDate: new Date(),
       status: "open",
     });
+
+    this.menu.push({
+      id: uuidv4(),
+      name: "Example",
+      price: 24.99,
+    });
   }
+
 
   getAll() {
     return this.data;
@@ -32,9 +40,32 @@ class Database {
       status: "open",
     };
 
+
     this.data.push(item);
 
     return item;
+  }
+
+
+  create(product) {
+    const item = {
+      id: uuidv4(),
+      product,
+      price: 24.99,
+    };
+
+    this.menu.push(item);
+
+    return item;
+    console.log(item);
+  }
+
+  AddtoMenu(id, name, price){
+    this.menu.push({id, name, price});
+  }
+
+  getMenu(){
+    return this.menu;
   }
 }
 
