@@ -98,27 +98,37 @@ class Database {
         return product
     }
 
-  create(product) {
-    const item = {
-      id: uuidv4(),
-      product,
-      price: 24.99,
-    };
+    create(product) {
+        const item = {
+            id: uuidv4(),
+            product,
+            price: 24.99,
+        };
+        this.menu.push(item);
+        return item;
+    }
 
-    this.menu.push(item);
+    updateMenu(menu) {
+        for (let i in this.menu) {
+            if (this.menu[i].id === menu.id) {
+                this.menu[i] = this.getModelMenu(menu);
+            }
+        }
+    }
 
-    return item;
-    console.log(item);
-  }
+    getMenuById(menuId) {
+        for(const menu of this.menu) {
+            if (menu.id === menuId) {
+                return menu;
+            }
+        }
+    }
 
-  AddtoMenu(id, name, price){
-    this.menu.push({id, name, price});
-  }
-
-  getMenu(){
-    return this.menu;
-  }
+    getMenu() {
+        return this.menu;
+    }
 }
 
 const database = new Database();
 export default database;
+

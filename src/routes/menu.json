@@ -1,0 +1,15 @@
+{
+  "menu": {
+    "name": "menu1",
+    "products": [
+      {
+        "name": "pr1",
+        "price": 12
+      },
+      {
+        "name": "pr1",
+        "price": 12
+      }
+    ]
+  }
+}
