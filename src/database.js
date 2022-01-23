@@ -13,24 +13,26 @@ class Database {
             createDate: new Date(),
             status: "open",
         });
+
     }
 
     getAll() {
         return this.data;
     }
 
-    getModelMenu({name, products, uuid}) {
+    getModelMenu({name, products, uuid, category}) {
         const modelMenu = {
             id: uuid,
             name: name,
             createDate: new Date(),
             products: this.getModelProducts(products),
+            category: category
         };
         return modelMenu;
     }
 
-    createMenu({name, products, uuid = uuidv4()}) {
-        const menu = this.getModelMenu({name, products, uuid});
+    createMenu({name, products,category, uuid = uuidv4()}) {
+        const menu = this.getModelMenu({name, products, category,uuid});
         this.menu.push(menu);
         return menu;
     }
